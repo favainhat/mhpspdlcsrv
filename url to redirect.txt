@@ -1,0 +1,6 @@
+corsair.capcom.co.jp
+skyhawk.capcom.co.jp
+viper.capcom.co.jp
+crusader.capcom.co.jp
+raptor.capcom.co.jp
+strike-raptor.capcom.co.jp
