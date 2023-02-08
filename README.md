@@ -6,7 +6,7 @@ One of the goals of this project is to preserve all original events.
 
 ## How to access it
 
-You can use an original PSP or an emulator that supports online (for example, JPCSP).
+Either an original PSP or an emulator that supports online (for example, JPCSP) can be used.
 
 To connect, just create a new connection, set DNS to manual, and specify the desired DNS server.
 
@@ -15,11 +15,11 @@ To connect, just create a new connection, set DNS to manual, and specify the des
 
 ## How to set up
 
-To host this project you just need to use a web server (for example, Apache) to serve its contents. The `psp` folder needs to be placed as the root folder, so an URL would look like this: `http://xx.xx.xx.xx/psp/MHPSP/DL_TOP.PHP`.
+To host this project a web server is needed (for example, Apache) to serve its contents. The `psp` folder needs to be placed as the root folder, so an URL would look like this: `http://xx.xx.xx.xx/psp/MHPSP/DL_TOP.PHP`.
 
-Since the PHP files have an uppercase extension, make sure to add the following line to your Apache configuration: `AddType application/x-httpd-php .PHP`.
+Since PHP files have an uppercase extension, make sure the following line is added to your Apache configuration: `AddType application/x-httpd-php .PHP`.
 
-Regarding the DNS, `dnsmasq` will work just fine. Install it, create a file at `/etc/dnsmasq.d/` and add the required domains you will find in the `redirect_urls.txt` file.
+Regarding the DNS, `dnsmasq` will work just fine. Install it, create a file at `/etc/dnsmasq.d/` and add the required domains specified in the `redirect_urls.txt` file.
 
 ## Notice
 
