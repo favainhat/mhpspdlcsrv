@@ -1,23 +1,26 @@
-Quick and dirty way to serve monster hunter psp dlc.
-I just first used PHP two days ago for this. So don't expect any code quality. 
+# Monster Hunter DLC replacement server
 
-Our dear JPCSP can acess online, but unfortunately the MHP1 server is dead.
+This repository contains data to make it possible to host replacement DLC servers for the Monster Hunter PSP games. For example, for MHP which had its official server closed in 2014.
 
-I don't think the psp dlc server will die anytime soon, 
-I decided to preserve dlcs sites and make a barebone mhp1 dlc site that can serve dlc. 
+One of the goals of this project is to preserve all original events.
 
-![alt text](/image/img0.PNG)
-![alt text](/image/img1.PNG)
+## How to access it
 
-Of course you MUST redirect to you server instead official server.
-I redirect URLs through my own DNS resolver, maybe you can use a proxy server instead.
+Either an original PSP or an emulator that supports online (for example, JPCSP) can be used.
 
+To connect, just create a new connection, set DNS to manual, and specify the desired DNS server.
 
-I considered a very simple tool to inject quest (decrypts save with such as psp-save or sed with gamekey and injects the quest again at a specific location of save), But it's inconvenience that you have to do every time you want to change dlc. In fact, tool like MHP_CHARA and MHP_QUEST already exist.
+![JPCSP 1](/images/img0.PNG)
+![JPCSP 2](/images/img1.PNG)
 
-By the way, JPCSP can export gamekey to decrypt to save. If you can't find the gamekey to decrypy save, try it.
+## How to set up
 
+To host this project a web server is needed (for example, Apache) to serve its contents. The `psp` folder needs to be placed as the root folder, so an URL would look like this: `http://xx.xx.xx.xx/psp/MHPSP/DL_TOP.PHP`.
 
+Since PHP files have an uppercase extension, make sure the following line is added to your Apache configuration: `AddType application/x-httpd-php .PHP`.
 
+Regarding the DNS, `dnsmasq` will work just fine. Install it, create a file at `/etc/dnsmasq.d/` and add the required domains specified in the `redirect_urls.txt` file. Make sure in `/etc/init.d/dnsmasq` there's no `--local-service` next to the `DNSMASQ_OPTS` variable.
 
+## Notice
 
+This is just a preservation project, we don't own some of the data present on this repository.
