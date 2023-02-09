@@ -19,7 +19,7 @@ To host this project a web server is needed (for example, Apache) to serve its c
 
 Since PHP files have an uppercase extension, make sure the following line is added to your Apache configuration: `AddType application/x-httpd-php .PHP`.
 
-Regarding the DNS, `dnsmasq` will work just fine. Install it, create a file at `/etc/dnsmasq.d/` and add the required domains specified in the `redirect_urls.txt` file.
+Regarding the DNS, `dnsmasq` will work just fine. Install it, create a file at `/etc/dnsmasq.d/` and add the required domains specified in the `redirect_urls.txt` file. Make sure in `/etc/init.d/dnsmasq` there's no `--local-service` next to the `DNSMASQ_OPTS` variable.
 
 ## Notice
 
